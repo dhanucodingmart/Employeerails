@@ -1,0 +1,87 @@
+<div class="p-3">
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      <%= @project.Name %>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <div class="d-flex">
+        <div>
+          <p>
+            <strong>Staff Name</strong>
+          </p>
+          <p>
+            <strong>Project Id</strong>
+          </p>
+          <p>
+            <strong>Clientname</strong>
+          </p>
+          <p>
+            <strong>Companyname</strong>
+          </p>
+          <p>
+            <strong>Duration</strong>
+          </p>
+          <p>
+            <strong>Techstack</strong>
+          </p>
+          <p>
+            <strong>Staff Id</strong>
+          </p>
+        </div>
+        <div class="ml-3">
+          <p>
+            <%= @staffs.select{ |item| item[:id] == @project.staff_id }[0].Name %>
+          </p>
+          <p>
+            <%= @project.id %>
+          </p>
+          <p>
+            <%= @project.Clientname %>
+          </p>
+          <p>
+            <%= @project.Companyname %>
+          </p>
+          <p>
+            <%= @project.Duration %>
+          </p>
+          <p>
+            <%= @project.Techstack %>
+          </p>
+          <p>
+            <%= @project.staff_id %>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <footer class="card-footer">
+    <%= link_to 'Update', edit_project_path(@project),class: "card-footer-item" %>
+    <%= link_to 'Delete', @project,class: "card-footer-item text_red", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </footer>
+</div>
+<%= link_to 'Back', projects_path,class:"button mt-4" %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

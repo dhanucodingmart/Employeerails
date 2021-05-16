@@ -1,0 +1,78 @@
+<%= form_with(model: staff) do |form| %>
+  <% if staff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+      <ul>
+        <% staff.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="w-100">
+<div class="box m-auto">
+
+  <div class="field">
+    <%= form.label :Name,class:"label" %>
+    <div class="control">
+      <%= form.text_field :Name,class:"input"   %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Position ,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Position,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mobile,class:"label" %>
+    <div class="control">
+    <%= form.number_field :Mobile,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Email,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Email,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Salary,class:"label" %>
+    <div class="control">
+    <%= form.number_field :Salary,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Address,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Address,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :City,class:"label" %>
+    <div class="control">
+    <%= form.text_field :City,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Pincode,class:"label" %>
+    <div class="control">
+    <%= form.number_field :Pincode,class:"input"  %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => 'button is-primary' %>
+  </div>
+
+</div>
+</div>
+<% end %>

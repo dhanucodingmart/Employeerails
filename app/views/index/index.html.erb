@@ -1,0 +1,28 @@
+<div class="d-flex">
+    <div>
+        <img style="border-bottom-right-radius: 150px;" class="d-none d-md-block" src="https://i.ibb.co/PMWPssW/undraw-Done-checking-re-6vyx.png" alt="undraw-Done-checking-re-6vyx">
+    </div>
+    <div class="w-100">
+        <div class="text-center font-weight-bold text-white mt-5" style="font-size:25px"> Welcome to Staff management portal ! </div>
+        <hr class="mt-4 mb-5"/>
+
+        <div class="d-flex justify-content-center">
+        <div style="width:300px" class="text-center text-white ">
+            We offers a full set of employee management tools that a company needs in order to manage employee information, engagement and performance, and drive more value company-wide.
+        </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <div class="buttons">
+            <% if user_signed_in? %>
+              <%= link_to 'Staffs', staffs_path,class: "button is-rounded is-inverted is-primary is-outlined" %>
+              <%= link_to 'Projects', projects_path,class: "button is-rounded is-inverted is-primary is-outlined" %>
+              <% else %>
+              <%= link_to 'Signup', new_user_registration_path,class: "button is-rounded is-inverted is-primary is-outlined" %>
+              <%= link_to 'Signin', new_user_session_path,class: "button is-rounded is-inverted is-primary is-outlined" %>
+              <% end %>
+            </div>
+        </div>
+
+    </div>
+</div>

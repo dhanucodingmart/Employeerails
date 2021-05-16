@@ -1,0 +1,63 @@
+<div class="d-flex p-4">
+  <div>
+    <h1 class="title ml-2">Projects</h1>
+  </div>
+  <div class="ml-5">
+    <%= link_to 'Add new', new_project_path,class: "button is-primary" %>
+  </div>
+</div>
+<hr/>
+
+
+<div class="row m-0 p-2">
+  <% @projects.each do |project| %>
+  <div class="col-12 col-md-4">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          <%= project.Name %>
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <div class="d-flex">
+            <div>
+              <p>
+                <strong>Clientname</strong>
+              </p>
+              <p>
+                <strong>Companyname</strong>
+              </p>
+              <p>
+                <strong>Staff Name</strong>
+              </p>
+            </div>
+            <div class="ml-3">
+              <p>
+                <%= project.Clientname %>
+              </p>
+              <p>
+                <%= project.Companyname %>
+              </p>
+              <p>
+                <%= @staffs.select{ |item| item[:id] == project.staff_id }[0].Name %>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <footer class="card-footer">
+        <%= link_to 'View', project,class: "card-footer-item" %>
+        <%= link_to 'Update', edit_project_path(project),class: "card-footer-item" %>
+        <%= link_to 'Delete', project,class: "card-footer-item text_red", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </footer>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+
+

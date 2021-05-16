@@ -1,0 +1,71 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="w-100">
+<div class="box m-auto">
+  <div class="field">
+    <%= form.label :Name,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Name,class:"input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :staff_id,class:"label" %>
+    <div class="control">
+      <%= form.text_field :staff_id,class:"input",list:"staffs" %>
+    </div>
+    <datalist id="staffs">
+      <% @staffs.each do |s| %>
+      <option value="<%= s.id %>"><%= s.Name %></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="field">
+    <%= form.label :Clientname,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Clientname,class:"input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Companyname,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Companyname,class:"input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Duration,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Duration,class:"input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :Techstack,class:"label" %>
+    <div class="control">
+    <%= form.text_field :Techstack,class:"input" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit :class => 'button is-primary' %>
+  </div>
+
+</div>
+</div>
+
+<% end %>

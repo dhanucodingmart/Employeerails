@@ -1,0 +1,64 @@
+<div class="d-flex p-4">
+  <div>
+    <h1 class="title ml-2">Staffs</h1>
+  </div>
+  <div class="ml-5">
+    <%= link_to 'Add new', new_staff_path,class: "button is-primary" %>
+  </div>
+</div>
+
+<hr/>
+
+<div class="row m-0 p-2">
+  <% @staffs.each do |staff| %>
+  <div class="col-12 col-md-3">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          <%= staff.Name %>
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+
+          <div class="d-flex align-items-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
+              <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z"/>
+            </svg>
+            <p class="ml-3">
+              <%= staff.Mobile %>            
+            </p>
+          </div>
+
+          <div class="d-flex align-items-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+              <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+            </svg>
+            <p class="ml-3">
+              <%= staff.Email %>            
+            </p>
+          </div>
+
+          <div class="d-flex align-items-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+            <p class="ml-3">
+              <%= staff.Address %>            
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <%= link_to 'View', staff,class: "card-footer-item" %>
+        <%= link_to 'Update', edit_staff_path(staff),class: "card-footer-item" %>
+        <%= link_to 'Delete', staff,class: "card-footer-item text_red", method: :delete, data: { confirm: 'Are you sure?' } %>
+      </footer>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+
