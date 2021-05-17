@@ -78,7 +78,7 @@
 
       <div class="row">
       <% @projects.select{ |item| item[:staff_id] == @staff.id }.each do |p| %>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4 mt-3">
       <div class="box is-link bg text-white font-weight-bold">
         <%= p.Name %>
         <hr class="m-0 mt-5 mb-3"/>
